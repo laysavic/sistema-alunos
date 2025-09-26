@@ -8,12 +8,13 @@
 <body>
     <h1>Cadastrar aluno</h1>
     
-    <form action="{{ route('alunos.store') }}" method="post">
+    <form action="{{ route('alunos.store') }}" method="get">
         @csrf
+        <label for="nome">Aluno: </label>
         <input type="text" name="nome" >
         <input type="text" name="matrícula">
-        <!-- <input type="text" name="curso">
-        <input type="number" name="idade"> -->
+        <input type="text" name="curso">
+        <input type="number" name="idade">
         <input type="submit" value="cadastrar">
 
     </form>
