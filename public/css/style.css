@@ -113,8 +113,7 @@ form {
 }
 
 .cad-form form input[type="text"],
-.cad-form form input[type="number"],
-.cad-form form input[type="email"] {
+.cad-form form input[type="number"]{
     width: 100%;
     padding: 10px 12px;
     border: 1px solid #604585;
