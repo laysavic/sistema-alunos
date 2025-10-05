@@ -1,0 +1,164 @@
+body {
+    background-color: #b2d7f0ff;
+    font-family: "Poppins", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #33008a;
+    margin: 30px 0;
+}
+
+.container {
+    width: 95%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+.add-btn {
+    display: inline-block;
+    background-color: #300467;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin: 20px 0;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.add-btn:hover {
+    background-color: #7883d5;
+    transform: scale(1.05);
+}
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 95%;
+    box-shadow: 0 2px 8px #0000001a;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #dfe3ff;
+}
+
+th {
+    background-color: #412a7b;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+td {
+    text-align: center;
+    font-size: 15px;
+    color: #333;
+}
+
+.actions button {
+    background-color: #5543b1ff;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 2px;
+    font-size: 14px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.actions button:hover {
+    background-color: #7883d5;
+    color: #300467;
+    transform: scale(1.05);
+}
+
+.actions a {
+    color: white;
+    text-decoration: none;
+}
+
+form {
+    display: inline;
+}
+
+.cad-form {
+    max-width: 500px;
+    margin: 60px auto;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 6px 18px #0000001a;
+}
+
+.cad-form h1 {
+    text-align: center;
+    color: #33008a;
+    margin-bottom: 25px;
+}
+
+.cad-form form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #300467;
+}
+
+.cad-form form input[type="text"],
+.cad-form form input[type="number"],
+.cad-form form input[type="email"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #604585;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.cad-form form input:focus {
+    border-color: #412a7b;
+    outline: none;
+    box-shadow: 0 0 5px #28056566;
+}
+
+.cad-form form button {
+    width: 100%;
+    background-color: #412a7b;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.cad-form form button:hover {
+    background-color: #7883d5;
+    color: #300467;
+    transform: scale(1.03);
+}
+
+.voltar {
+    display: inline-block;
+    margin-top: 15px;
+    text-align: center;
+    color: #4f1182;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.voltar:hover {
+    text-decoration: underline;
+}
