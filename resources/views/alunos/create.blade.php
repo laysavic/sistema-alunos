@@ -13,17 +13,17 @@
 
         <form action="{{ route('alunos.store') }}" method="post">
             @csrf
-            <label for="nome">Aluno: </label>
-            <input type="text" name="nome" >
+            <label for="nome">Aluno(a): </label>
+            <input type="text" name="nome" required>
 
             <label for="nome">Matrícula: </label>
-            <input type="text" name="matricula">
+            <input type="text" name="matricula" required>
 
             <label for="nome">Curso: </label>
-            <input type="text" name="curso">
+            <input type="text" name="curso" required>
 
             <label for="nome">Idade: </label>
-            <input type="number" name="idade">
+            <input type="number" name="idade" required>
 
             <button type="submit"> Cadastrar </button>
 
