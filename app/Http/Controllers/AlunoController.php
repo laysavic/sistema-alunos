@@ -30,14 +30,10 @@ class AlunoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nome' => 'required|string|max:255',
-            'matricula' => 'required|numeric|unique:alunos,matricula',
-            'curso' => 'required|string|max:100',
-            'idade' => 'required|integer|min:1|max:120',
-        // 'nome' => 'required',
-        // 'matricula' => 'required',
-        // 'curso' => 'required',
-        // 'idade' => 'required|integer',
+        'nome' => 'required',
+        'matricula' => 'required',
+        'curso' => 'required',
+        'idade' => 'required|integer',
     ]);
     
         Aluno::create($request->all());
@@ -68,13 +64,6 @@ class AlunoController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $request->validate([
-            'nome' => 'required|string|max:255',
-            'matricula' => 'required|numeric|unique:alunos,matricula,' . $id,
-            'curso' => 'required|string|max:100',
-            'idade' => 'required|integer|min:1|max:120',
-        ]);
-
         $aluno = Aluno::findOrfail($id);
 
         $aluno->update($request->all());
@@ -92,6 +81,6 @@ class AlunoController extends Controller
 
         $aluno->delete();
 
-        return redirect()->route("alunos.index")->with('success', 'Aluno excluído com sucesso!');
+        return redirect()->route("alunos.index")->with('success', 'Aluno excluído com sucesso!');;
     }
 }
