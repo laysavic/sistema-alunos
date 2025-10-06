@@ -27,7 +27,7 @@
             <label for="nome">Idade: </label>
             <input type="number" name="idade" value="{{ $aluno->idade }}" required>
 
-            <button type="submit"> Altualizar </button>
+            <button type="submit"> Atualizar </button>
 
         </form>
         <a href="{{ route('alunos.index') }}" class="voltar">← Voltar</a>
