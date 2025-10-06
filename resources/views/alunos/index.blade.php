@@ -6,7 +6,19 @@
     <title>Alunos</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
+
+<script>
+    function confirmarExclusao() {
+        return confirm("Tem certeza que deseja excluir este aluno(a)?");
+    }
+</script>
+
 <body>
+ @if(session('success'))
+        <div class="alert">
+            {{ session('success') }}
+        </div>
+    @endif
 
     <h1>Alunos</h1>
 
@@ -33,7 +45,7 @@
                     <td>{{ $aluno->idade }}</td>
                     <td class="actions">
                         <a href="{{ route('alunos.edit', $aluno->id) }}"><button>Editar</button></a>
-                        <form action="{{ route('alunos.destroy', $aluno->id) }}" method="POST" style="display:inline;">
+                        <form action="{{ route('alunos.destroy', $aluno->id) }}" method="POST"  onsubmit="return confirmarExclusao()">
                             @csrf
                             @method('DELETE')
                             <button type="submit">Excluir</button>
