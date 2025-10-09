@@ -15,7 +15,7 @@
         <form action="{{ route('alunos.update', $aluno->id) }}" method="post">
             @method("put")
             @csrf
-            <label for="nome">Aluno(a): </label>
+            <label for="nome">Aluno: </label>
             <input type="text" name="nome" value="{{ $aluno->nome }}" required>
 
             <label for="nome">Matrícula: </label>
@@ -25,7 +25,7 @@
             <input type="text" name="curso" value="{{ $aluno->curso }}" required>
 
             <label for="nome">Idade: </label>
-            <input type="number" name="idade" value="{{ $aluno->idade }}" required>
+            <input type="number" name="idade" value="{{ $aluno->idade }}">
 
             <button type="submit"> Atualizar </button>
 
