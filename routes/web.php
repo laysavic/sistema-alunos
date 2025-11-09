@@ -17,3 +17,7 @@ Route::get('/', function () {
 // Route::delete( '/alunos/{aluno}/edit',[AlunoController::class, 'destroy'])->name('alunos.destroy');
 
 Route::resource("/alunos", AlunoController::class);
+Route::resource("/cursos", CursoController::class);
+Route::resource("/professores", ProfessorController::class);
+Route::resource("/disciplinas", DisciplinaController::class);
+Route::resource("/turmas", TurmaController::class);
