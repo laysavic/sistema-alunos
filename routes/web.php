@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AlunoController;
+use App\Http\Controllers\CursoController;
+use App\Http\Controllers\ProfessorController;
+use App\Http\Controllers\DisciplinaController;
+use App\Http\Controllers\TurmaController;
 
 Route::get('/', function () {
     return view('welcome');
