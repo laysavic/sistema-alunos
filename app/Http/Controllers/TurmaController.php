@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Turma;
+use App\Models\Curso;
+use App\Models\Disciplina;
 
 class TurmaController extends Controller
 {
@@ -11,7 +14,8 @@ class TurmaController extends Controller
      */
     public function index()
     {
-        //
+        $turmas = Turma::with(['curso', 'disciplina'])->get();
+        return view('turmas.index', compact('turmas'));
     }
 
     /**
@@ -19,7 +23,9 @@ class TurmaController extends Controller
      */
     public function create()
     {
-        //
+        $cursos = Curso::all();
+        $disciplinas = Disciplina::all();
+        return view('turmas.create', compact('cursos', 'disciplinas'));
     }
 
     /**
@@ -27,7 +33,15 @@ class TurmaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nome' => 'required',
+            'semestre' => 'required',
+            'curso_id' => 'required',
+            'disciplina_id' => 'required'
+        ]);
+
+        Turma::create($request->all());
+        return redirect()->route('turmas.index')->with('success', 'Turma criada com sucesso!');
     }
 
     /**
@@ -43,22 +57,34 @@ class TurmaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $cursos = Curso::all();
+        $disciplinas = Disciplina::all();
+        return view('turmas.edit', compact('turma', 'cursos', 'disciplinas'));
+
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Turma $turma)
     {
-        //
+            $request->validate([
+            'nome' => 'required',
+            'semestre' => 'required',
+            'curso_id' => 'required',
+            'disciplinas_id' => 'required'
+        ]);
+
+        $turma->update($request->all());
+        return redirect()->route('turmas.index')->with('success', 'Turma atualizada com sucesso!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Turma $turma)
     {
-        //
+        $turma->delete();
+        return redirect()->route('turmas.index')->with('success', 'Turma removida com sucesso!');
     }
 }
