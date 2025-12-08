@@ -22,7 +22,7 @@
     </select><br>
 
     Disciplina:
-    <select name="disciplina_id">
+    <select name="disciplina_id" required>
         @foreach ($disciplinas as $disciplina)
             <option value="{{ $disciplina->id }}">{{ $disciplina->nome }}</option>
         @endforeach
