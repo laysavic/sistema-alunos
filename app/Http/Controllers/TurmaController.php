@@ -34,14 +34,20 @@ class TurmaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nome' => 'required',
-            'semestre' => 'required',
-            'curso_id' => 'required',
-            'disciplina_id' => 'required'
-        ]);
+        'nome' => 'required',
+        'semestre' => 'required',
+        'curso_id' => 'required',
+        'disciplina_id' => 'required',
+    ]);
 
-        Turma::create($request->all());
-        return redirect()->route('turmas.index')->with('success', 'Turma criada com sucesso!');
+    Turma::create([
+        'nome' => $request->nome,
+        'semestre' => $request->semestre,
+        'curso_id' => $request->curso_id,
+        'disciplina_id' => $request->disciplina_id,
+    ]);
+
+    return redirect()->route('turmas.index')->with('success', 'Turma criada com sucesso!');
     }
 
     /**
@@ -55,12 +61,13 @@ class TurmaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
+        $turma = Turma::findOrFail($id);
         $cursos = Curso::all();
         $disciplinas = Disciplina::all();
-        return view('turmas.edit', compact('turma', 'cursos', 'disciplinas'));
 
+        return view('turmas.edit', compact('turma', 'cursos', 'disciplinas'));
     }
 
     /**
@@ -72,7 +79,7 @@ class TurmaController extends Controller
             'nome' => 'required',
             'semestre' => 'required',
             'curso_id' => 'required',
-            'disciplinas_id' => 'required'
+            'disciplina_id' => 'required'
         ]);
 
         $turma->update($request->all());
