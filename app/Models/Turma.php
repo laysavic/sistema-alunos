@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Turma extends Model
 {
-    protected $fillable = [ 'nome','semestre','curso_id','disciplinas_id'];
+    protected $fillable = [ 'nome','semestre','curso_id','disciplina_id'];
 
       public function curso()
     {
@@ -15,6 +15,6 @@ class Turma extends Model
 
     public function disciplina()
     {
-        return $this->belongsTo(Disciplina::class, 'disciplinas_id');
+       return $this->belongsTo(Disciplina::class);
     }
 }
